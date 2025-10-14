@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generador QR único</title>
+</head>
+<body>
+  <h1>Generar QR único (1 uso)</h1>
+  <label>Nombre: <input id="name" /></label><br/>
+  <label>Apellido: <input id="lastname" /></label><br/>
+  <button id="go">Generar</button>
+
+  <h2>QR</h2>
+  <img id="qrimg" alt="QR aparecerá aquí" />
+  <p id="link"></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
