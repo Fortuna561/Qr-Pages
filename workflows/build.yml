@@ -1,5 +1,7 @@
 name: Build Frontend
 
+name: Build JS Puro
+
 on:
   push:
     branches:
@@ -17,15 +19,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate config.js
+      - name: Build / Copy frontend
         run: |
-          echo "const MI_SECRETO = '${{ secrets.MI_SECRETO }}';" > public/config.js
-
-      - name: Deploy / Build (si tenés algún paso)
-        run: echo "Aquí podrías copiar archivos a tu hosting"
-
-      - name: Build frontend
-        run: npm run build
+          # Aquí podrías poner npm run build si tuvieras un build
+          # Pero como es JS puro, solo lo dejamos listo para deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+
 
