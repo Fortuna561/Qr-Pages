@@ -1,28 +1,18 @@
-name: Build Frontend
+name: Build
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Build / Copy frontend
-        run: |
-          # Aquí podrías poner npm run build si tuvieras un build
-          # Pero como es JS puro, solo lo dejamos listo para deploy
+      - name: Ejecutar script con secreto
+        run: node -e "console.log(process.env.GITHUBTOKEN)"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
 
 
 
