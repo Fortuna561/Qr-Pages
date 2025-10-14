@@ -22,7 +22,7 @@ document.getElementById("go").onclick = async () => {
     const githubRepo = "Qr-Pages";
     const branch = "main";
     const workerHost = "qr-pages.fortunaluciano561.workers.dev/";
-    const githubToken = process.env.GITHUB_TOKEN;
+    const githubToken = process.env.GITHUBTOKEN;
 
     if (!name || !lastname) {
         return alert("Completa los campos.");
@@ -105,5 +105,6 @@ document.getElementById("go").onclick = async () => {
         document.getElementById("qrimg").src = url;
     }).catch(err => alert("Error generando QR: " + err));
 };
+
 
 
