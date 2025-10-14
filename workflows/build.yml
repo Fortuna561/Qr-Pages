@@ -1,7 +1,5 @@
 name: Build Frontend
 
-name: Build JS Puro
-
 on:
   push:
     branches:
@@ -25,5 +23,6 @@ jobs:
           # Pero como es JS puro, solo lo dejamos listo para deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+
 
 
