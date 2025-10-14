@@ -17,10 +17,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+      - name: Generate config.js
+        run: |
+          echo "const MI_SECRETO = '${{ secrets.MI_SECRETO }}';" > public/config.js
+
+      - name: Deploy / Build (si tenés algún paso)
+        run: echo "Aquí podrías copiar archivos a tu hosting"
 
       - name: Build frontend
         run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+
