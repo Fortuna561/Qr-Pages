@@ -1,4 +1,4 @@
-async function sha1hex(input) {"Hello world"
+async function sha1hex(input) {
     // Generar tokenId unico
     const enc = new TextEncoder();
     const data = enc.encode(input + Date.now().toString() + Math.random());
@@ -97,6 +97,7 @@ document.getElementById("go").onclick = async () => {
         document.getElementById("qrimg").src = url;
     }).catch(err => alert("Error generando QR: " + err));
 };
+
 
 
 
